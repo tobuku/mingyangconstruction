@@ -1,1 +1,1146 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY Construction | Ming Yang Construction LLC | Kaneohe, Hawaii General Contractor</title>
+  <meta name="description" content="Ming Yang Construction LLC (MY Construction) — licensed general contractor in Kaneohe, Hawaii. Kitchen remodels, bathroom remodels, new builds, extensions, and full interior renovations. Free estimates. Call (808) 940-2350.">
+  <meta name="keywords" content="general contractor Kaneohe Hawaii, kitchen remodel Oahu, bathroom remodel Hawaii, home renovation Kaneohe, MY Construction, Ming Yang Construction">
+  <link rel="canonical" href="https://tobuku.github.io/mingyangconstruction/">
+  <meta property="og:title" content="MY Construction | General Contractor Kaneohe, Hawaii">
+  <meta property="og:description" content="Locally owned general contractor serving Oahu. Kitchen & bathroom remodels, new builds, extensions, and full renovations. 30+ years combined experience. Free estimates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tobuku.github.io/mingyangconstruction/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1a2332;
+      --gold: #c8953c;
+      --gold-light: #e0b060;
+      --charcoal: #2a2a2a;
+      --slate: #4a5568;
+      --light: #f7f5f2;
+      --white: #ffffff;
+      --shadow: 0 4px 24px rgba(0,0,0,0.1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--charcoal);
+      line-height: 1.7;
+      background: var(--white);
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--navy);
+      transition: box-shadow .3s;
+    }
+    header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--gold);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--navy);
+    }
+    .logo-text {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: .5px;
+    }
+    .logo-text span { color: var(--gold); }
+
+    nav a {
+      color: rgba(255,255,255,.85);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin-left: 32px;
+      transition: color .2s;
+      letter-spacing: .3px;
+    }
+    nav a:hover { color: var(--gold-light); }
+
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--navy) !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--white);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, var(--navy) 0%, #0f1923 60%, #1a3045 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 120px 24px 80px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(200,149,60,.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to top, var(--white), transparent);
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,149,60,.15);
+      border: 1px solid rgba(200,149,60,.3);
+      color: var(--gold-light);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      letter-spacing: .5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all .25s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,.3);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+    }
+    .hero-stat h3 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--gold);
+    }
+    .hero-stat p {
+      font-size: 13px;
+      color: rgba(255,255,255,.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .hero-card {
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .hero-card h3 {
+      color: var(--white);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .hero-card p {
+      color: rgba(255,255,255,.6);
+      font-size: 14px;
+    }
+    .hero-card-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(200,149,60,.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 22px;
+    }
+
+    /* ===== SECTION STYLES ===== */
+    section { padding: 100px 24px; }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 60px;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .section-header h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-header p {
+      color: var(--slate);
+      font-size: 16px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about { background: var(--white); }
+    .about-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-visual {
+      background: var(--light);
+      border-radius: 20px;
+      padding: 48px;
+      position: relative;
+    }
+    .about-name-block {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .about-chinese {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .about-meaning h3 {
+      font-size: 22px;
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .about-meaning p {
+      color: var(--slate);
+      font-size: 14px;
+    }
+    .about-values {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .about-value {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--white);
+      padding: 18px 20px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+    .about-value-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: rgba(200,149,60,.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .about-value h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .about-value p {
+      font-size: 13px;
+      color: var(--slate);
+      margin-top: 2px;
+    }
+    .about-text h2 {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .about-text > p {
+      color: var(--slate);
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .about-highlight {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .check-icon {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      background: rgba(200,149,60,.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* ===== SERVICES ===== */
+    .services { background: var(--light); }
+    .services-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px 28px;
+      box-shadow: var(--shadow);
+      transition: transform .3s, box-shadow .3s;
+      border: 1px solid transparent;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.12);
+      border-color: rgba(200,149,60,.3);
+    }
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      color: var(--slate);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* ===== WHY CHOOSE US ===== */
+    .why { background: var(--navy); color: var(--white); }
+    .why .section-header h2 { color: var(--white); }
+    .why .section-header p { color: rgba(255,255,255,.6); }
+    .why-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .why-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 32px;
+      transition: background .3s;
+    }
+    .why-card:hover { background: rgba(255,255,255,.08); }
+    .why-card-num {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 12px;
+      opacity: .4;
+    }
+    .why-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .why-card p {
+      color: rgba(255,255,255,.6);
+      font-size: 14px;
+    }
+
+    /* ===== REVIEWS ===== */
+    .reviews { background: var(--white); }
+    .reviews-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .review-card {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .review-stars {
+      color: var(--gold);
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    .review-card blockquote {
+      font-size: 15px;
+      color: var(--charcoal);
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .review-author {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--navy);
+    }
+    .review-source {
+      font-size: 12px;
+      color: var(--slate);
+      margin-top: 2px;
+    }
+
+    /* ===== SERVICE AREA ===== */
+    .area { background: var(--light); }
+    .area-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .area-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .area-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--navy);
+      padding: 12px 16px;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .area-dot {
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .area-map {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      height: 400px;
+    }
+    .area-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      background: linear-gradient(135deg, var(--navy), #0f1923);
+      text-align: center;
+      padding: 100px 24px;
+    }
+    .cta h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .cta p {
+      color: rgba(255,255,255,.6);
+      font-size: 18px;
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-contact {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .cta-contact-item {
+      text-align: center;
+    }
+    .cta-contact-item span {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,.4);
+      margin-bottom: 6px;
+    }
+    .cta-contact-item a,
+    .cta-contact-item p {
+      color: var(--gold-light);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .cta-contact-item a:hover { color: var(--white); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0d1520;
+      color: rgba(255,255,255,.5);
+      padding: 60px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo { margin-bottom: 16px; }
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .footer-col a {
+      display: block;
+      color: rgba(255,255,255,.5);
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 12px;
+      transition: color .2s;
+    }
+    .footer-col a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .social-links { display: flex; gap: 16px; }
+    .social-links a {
+      color: rgba(255,255,255,.4);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color .2s;
+    }
+    .social-links a:hover { color: var(--gold-light); }
+
+    /* ===== MOBILE NAV ===== */
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      nav {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transform: translateY(-120%);
+        transition: transform .3s;
+        border-top: 1px solid rgba(255,255,255,.1);
+      }
+      nav.open { transform: translateY(0); }
+      nav a { margin-left: 0; font-size: 16px; }
+      .nav-cta { text-align: center; }
+
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .hero-stats { gap: 24px; }
+      .hero-stat h3 { font-size: 24px; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .area-inner { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .about-highlights { grid-template-columns: 1fr; }
+      .area-list { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: column; gap: 16px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .cta-contact { flex-direction: column; gap: 24px; }
+    }
+  </style>
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "Ming Yang Construction LLC",
+    "alternateName": "MY Construction",
+    "url": "https://tobuku.github.io/mingyangconstruction/",
+    "telephone": "+1-808-940-2350",
+    "email": "myconstruction808@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "45-1026 Kamehameha Hwy",
+      "addressLocality": "Kaneohe",
+      "addressRegion": "HI",
+      "postalCode": "96744",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 21.4180,
+      "longitude": -157.8036
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    ],
+    "foundingDate": "2023",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Oahu, Hawaii"
+    },
+    "description": "Locally owned general contractor in Kaneohe, Hawaii specializing in kitchen remodels, bathroom remodels, new home builds, extensions, and full interior renovations."
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">&#21517;</div>
+        <div class="logo-text"><span>MY</span> Construction</div>
+      </a>
+      <button class="hamburger" id="menuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#area">Service Area</a>
+        <a href="#contact" class="nav-cta">Free Estimate</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">Serving Oahu Since 2023</div>
+        <h1>Quality Craftsmanship for Your <span>Dream Home</span></h1>
+        <p class="hero-sub">Ming Yang Construction is a locally owned general contractor in Kaneohe, Hawaii. We treat your home as if it were our own.</p>
+        <div class="hero-btns">
+          <a href="tel:8089402350" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (808) 940-2350
+          </a>
+          <a href="#services" class="btn btn-outline">Our Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <h3>30+</h3>
+            <p>Years Combined Experience</p>
+          </div>
+          <div class="hero-stat">
+            <h3>5.0</h3>
+            <p>Star Reviews</p>
+          </div>
+          <div class="hero-stat">
+            <h3>Free</h3>
+            <p>Estimates</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8953c" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Full-Service General Contractor</h3>
+          <p>From kitchen and bathroom remodels to new home builds and extensions — we handle every detail from start to finish.</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8953c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Honesty &amp; Integrity</h3>
+          <p>We are competitively priced with close attention to the details of each and every project we take on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-name-block">
+          <div class="about-chinese">&#21517;&#25196;</div>
+          <div class="about-meaning">
+            <h3>Ming Yang</h3>
+            <p>Reputation &amp; Long-Term Excellence</p>
+          </div>
+        </div>
+        <div class="about-values">
+          <div class="about-value">
+            <div class="about-value-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8953c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4>Licensed &amp; Insured</h4>
+              <p>Fully licensed contractor serving Oahu</p>
+            </div>
+          </div>
+          <div class="about-value">
+            <div class="about-value-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8953c" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h4>On Time, On Budget</h4>
+              <p>Transparent pricing with no surprise costs</p>
+            </div>
+          </div>
+          <div class="about-value">
+            <div class="about-value-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8953c" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Family Owned</h4>
+              <p>Locally owned and operated in Kaneohe</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-label">About Us</span>
+        <h2>Building With Purpose on Oahu</h2>
+        <p>Ming Yang Construction LLC, known as MY Construction, was founded with a simple belief: your home deserves the same care and attention we'd give our own. Based in Kaneohe on the Windward side of Oahu, our team brings over 30 years of combined experience in construction and carpentry.</p>
+        <p>Our name, Ming Yang (&#21517;&#25196;), means "a name that is recognized" — a reputation built on quality work, honest communication, and lasting results. From detailed finish work to full-scale renovations, we bring backgrounds in residential remodeling and skilled craftsmanship to every project.</p>
+        <div class="about-highlights">
+          <div class="about-highlight">
+            <div class="check-icon">&#10003;</div>
+            Locally Owned &amp; Operated
+          </div>
+          <div class="about-highlight">
+            <div class="check-icon">&#10003;</div>
+            Free Estimates
+          </div>
+          <div class="about-highlight">
+            <div class="check-icon">&#10003;</div>
+            Competitive Pricing
+          </div>
+          <div class="about-highlight">
+            <div class="check-icon">&#10003;</div>
+            Attention to Detail
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <span class="section-label">What We Do</span>
+      <h2>Our Construction Services</h2>
+      <p>From concept to completion, we deliver quality craftsmanship on every project across Oahu.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a2332" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+        </div>
+        <h3>Kitchen Remodels</h3>
+        <p>Transform your kitchen into a modern, functional space. We handle cabinetry, countertops, flooring, lighting, plumbing, and every finish detail to create the kitchen you've always wanted.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a2332" stroke-width="2"><path d="M9 2v6"/><path d="M15 2v6"/><path d="M12 17v5"/><path d="M5 8h14"/><rect x="4" y="8" width="16" height="9" rx="2"/></svg>
+        </div>
+        <h3>Bathroom Remodels</h3>
+        <p>Full bathroom renovations including tub-to-shower conversions, tile work, mosaic shower floors, vanity installation, and vinyl-wood flooring. Complete transformations from start to finish.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a2332" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>New Home Builds</h3>
+        <p>Build your dream home from the ground up. We manage the full construction process with quality materials, expert craftsmanship, and clear communication every step of the way.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a2332" stroke-width="2"><rect x="1" y="6" width="18" height="15" rx="2"/><path d="M19 6V4a2 2 0 00-2-2H7a2 2 0 00-2 2v2"/><path d="M19 13h4v-2a2 2 0 00-2-2h-2"/></svg>
+        </div>
+        <h3>Home Extensions</h3>
+        <p>Need more space? We design and build room additions and home extensions that blend seamlessly with your existing structure, adding both living space and property value.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a2332" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Full Interior Renovation</h3>
+        <p>Complete interior overhauls including walls, flooring, electrical, plumbing, paint, trim, and fixtures. We reimagine your interior space with careful attention to every detail.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a2332" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>General Contracting</h3>
+        <p>Whatever your project needs, we provide comprehensive general contracting services. From permits to punch lists, we manage every phase of your construction project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="why">
+    <div class="section-header">
+      <span class="section-label">Why MY Construction</span>
+      <h2>What Sets Us Apart</h2>
+      <p>We're not just building structures — we're building trust, one project at a time.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-num">01</div>
+        <h3>We Treat Your Home Like Our Own</h3>
+        <p>Every project gets our full attention and respect. We protect your property, keep job sites clean, and deliver results we'd be proud to have in our own homes.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-num">02</div>
+        <h3>30+ Years Combined Experience</h3>
+        <p>Our team's deep experience in residential remodeling and finish carpentry means we know how to handle complex challenges and deliver exceptional results.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-num">03</div>
+        <h3>Transparent &amp; Competitive Pricing</h3>
+        <p>No hidden fees, no surprise charges. We provide detailed estimates upfront so you know exactly what to expect. Competitively priced without cutting corners.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-num">04</div>
+        <h3>Close Attention to Detail</h3>
+        <p>From the initial walkthrough to the final inspection, we obsess over the details. It's the small things — clean lines, precise cuts, perfect finishes — that make the difference.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews" id="reviews">
+    <div class="section-header">
+      <span class="section-label">Testimonials</span>
+      <h2>What Our Clients Say</h2>
+      <p>Real reviews from homeowners across Oahu.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"William and the team at Ming Yang (MY) Construction are phenomenal! Our kitchen remodel turned out beyond what we imagined. Highly recommend."</blockquote>
+        <div class="review-author">Satisfied Homeowner</div>
+        <div class="review-source">Yelp Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"MY Construction fully redid my bathroom — conversion from tub to shower, shower walls, mosaic shower floor, vinyl-wood flooring. The quality of work was outstanding."</blockquote>
+        <div class="review-author">Bathroom Remodel Client</div>
+        <div class="review-source">Yelp Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Honest, hardworking, and detail-oriented. They treated our home with care and kept us informed throughout the entire renovation process. Will definitely use again."</blockquote>
+        <div class="review-author">Renovation Client</div>
+        <div class="review-source">Customer Review</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE AREA ===== -->
+  <section class="area" id="area">
+    <div class="area-inner">
+      <div>
+        <span class="section-label">Service Area</span>
+        <h2 style="font-size:clamp(28px,4vw,38px);font-weight:800;color:var(--navy);margin-bottom:8px;">Proudly Serving All of Oahu</h2>
+        <p style="color:var(--slate);font-size:16px;margin-bottom:32px;">Based in Kaneohe on the Windward side, we serve homeowners and businesses across the island.</p>
+        <div class="area-list">
+          <div class="area-item"><div class="area-dot"></div>Kaneohe</div>
+          <div class="area-item"><div class="area-dot"></div>Kailua</div>
+          <div class="area-item"><div class="area-dot"></div>Honolulu</div>
+          <div class="area-item"><div class="area-dot"></div>Pearl City</div>
+          <div class="area-item"><div class="area-dot"></div>Kapolei</div>
+          <div class="area-item"><div class="area-dot"></div>Aiea</div>
+          <div class="area-item"><div class="area-dot"></div>Mililani</div>
+          <div class="area-item"><div class="area-dot"></div>Waipahu</div>
+          <div class="area-item"><div class="area-dot"></div>Hawaii Kai</div>
+          <div class="area-item"><div class="area-dot"></div>North Shore</div>
+        </div>
+      </div>
+      <div class="area-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.5!2d-157.8036!3d21.418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006e748c50913%3A0x4b8e4e8c93c9c7b!2s45-1026+Kamehameha+Hwy%2C+Kaneohe%2C+HI+96744!5e0!3m2!1sen!2sus!4v1693000000000!5m2!1sen!2sus" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="MY Construction location map"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta" id="contact">
+    <h2>Ready to Start Your Project?</h2>
+    <p>Get a free estimate today. We'd love to hear about your vision and make it a reality.</p>
+    <div class="cta-btns">
+      <a href="tel:8089402350" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call (808) 940-2350
+      </a>
+      <a href="mailto:myconstruction808@gmail.com" class="btn btn-outline">Email Us</a>
+    </div>
+    <div class="cta-contact">
+      <div class="cta-contact-item">
+        <span>Address</span>
+        <p>45-1026 Kamehameha Hwy, Kaneohe, HI 96744</p>
+      </div>
+      <div class="cta-contact-item">
+        <span>Hours</span>
+        <p>Mon-Sat: 8:00 AM - 5:00 PM</p>
+      </div>
+      <div class="cta-contact-item">
+        <span>Email</span>
+        <a href="mailto:myconstruction808@gmail.com">myconstruction808@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-icon">&#21517;</div>
+          <div class="logo-text"><span>MY</span> Construction</div>
+        </a>
+        <p>Ming Yang Construction LLC — locally owned and operated general contractor in Kaneohe, Hawaii. Quality craftsmanship, honest work, competitive pricing.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Kitchen Remodels</a>
+        <a href="#services">Bathroom Remodels</a>
+        <a href="#services">New Home Builds</a>
+        <a href="#services">Home Extensions</a>
+        <a href="#services">Interior Renovation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#area">Service Area</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:8089402350">(808) 940-2350</a>
+        <a href="mailto:myconstruction808@gmail.com">myconstruction808@gmail.com</a>
+        <a href="https://www.facebook.com/myconstruction808/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.yelp.com/biz/my-construction-kaneohe-5" target="_blank" rel="noopener">Yelp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Ming Yang Construction LLC. All rights reserved.</span>
+      <div class="social-links">
+        <a href="https://www.facebook.com/myconstruction808/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+        <a href="https://www.yelp.com/biz/my-construction-kaneohe-5" target="_blank" rel="noopener" aria-label="Yelp">Yelp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky header shadow
+    window.addEventListener('scroll', function() {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile menu toggle
+    document.getElementById('menuBtn').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#mainNav a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('mainNav').classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
