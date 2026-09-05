@@ -9,6 +9,7 @@
   <link rel="canonical" href="https://tobuku.github.io/mingyangconstruction/">
   <meta property="og:title" content="MY Construction | General Contractor Kaneohe, Hawaii">
   <meta property="og:description" content="Locally owned general contractor serving Oahu. Kitchen & bathroom remodels, new builds, extensions, and full renovations. 30+ years combined experience. Free estimates.">
+  <meta property="og:image" content="https://tobuku.github.io/mingyangconstruction/images/logo.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tobuku.github.io/mingyangconstruction/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +37,8 @@
       line-height: 1.7;
       background: var(--white);
     }
+
+    img { max-width: 100%; height: auto; display: block; }
 
     /* ===== HEADER / NAV ===== */
     header {
@@ -66,18 +69,12 @@
       text-decoration: none;
       color: var(--white);
     }
-    .logo-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--gold);
+    .logo-img {
+      width: 48px;
+      height: 48px;
       border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Noto Sans SC', sans-serif;
-      font-weight: 700;
-      font-size: 20px;
-      color: var(--navy);
+      object-fit: contain;
+      background: var(--white);
     }
     .logo-text {
       font-weight: 700;
@@ -128,20 +125,25 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(160deg, var(--navy) 0%, #0f1923 60%, #1a3045 100%);
       position: relative;
       overflow: hidden;
       padding: 120px 24px 80px;
     }
-    .hero::before {
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-bg::after {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(200,149,60,.12) 0%, transparent 70%);
-      border-radius: 50%;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(26,35,50,.92) 0%, rgba(15,25,35,.85) 50%, rgba(26,48,69,.8) 100%);
     }
     .hero::after {
       content: '';
@@ -151,6 +153,7 @@
       right: 0;
       height: 120px;
       background: linear-gradient(to top, var(--white), transparent);
+      z-index: 1;
     }
 
     .hero-inner {
@@ -161,7 +164,7 @@
       gap: 60px;
       align-items: center;
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     .hero-badge {
@@ -186,7 +189,7 @@
       line-height: 1.15;
       margin-bottom: 20px;
     }
-    .hero h1 span { color: var(--gold); }
+    .hero h1 em { color: var(--gold); font-style: normal; }
 
     .hero-sub {
       font-size: 18px;
@@ -317,32 +320,20 @@
       align-items: center;
     }
     .about-visual {
-      background: var(--light);
-      border-radius: 20px;
-      padding: 48px;
       position: relative;
     }
-    .about-name-block {
+    .about-logo-wrap {
+      background: var(--light);
+      border-radius: 20px;
+      padding: 40px;
       display: flex;
       align-items: center;
-      gap: 20px;
-      margin-bottom: 32px;
+      justify-content: center;
+      margin-bottom: 24px;
     }
-    .about-chinese {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 72px;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1;
-    }
-    .about-meaning h3 {
-      font-size: 22px;
-      color: var(--navy);
-      font-weight: 700;
-    }
-    .about-meaning p {
-      color: var(--slate);
-      font-size: 14px;
+    .about-logo-wrap img {
+      max-width: 260px;
+      width: 100%;
     }
     .about-values {
       display: flex;
@@ -353,7 +344,7 @@
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      background: var(--white);
+      background: var(--light);
       padding: 18px 20px;
       border-radius: 12px;
       box-shadow: var(--shadow);
@@ -431,7 +422,7 @@
     .service-card {
       background: var(--white);
       border-radius: 16px;
-      padding: 36px 28px;
+      overflow: hidden;
       box-shadow: var(--shadow);
       transition: transform .3s, box-shadow .3s;
       border: 1px solid transparent;
@@ -441,16 +432,13 @@
       box-shadow: 0 12px 40px rgba(0,0,0,.12);
       border-color: rgba(200,149,60,.3);
     }
-    .service-icon {
-      width: 56px;
-      height: 56px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      margin-bottom: 20px;
+    .service-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .service-card-body {
+      padding: 28px 24px;
     }
     .service-card h3 {
       font-size: 20px;
@@ -463,6 +451,102 @@
       font-size: 14px;
       line-height: 1.7;
     }
+
+    /* ===== PROJECT GALLERY ===== */
+    .gallery { background: var(--white); }
+    .gallery-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,35,50,.6) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .gallery-item:hover::after { opacity: 1; }
+    .gallery-label {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      right: 14px;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 600;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all .3s;
+    }
+    .gallery-item:hover .gallery-label { opacity: 1; transform: translateY(0); }
+    .gallery-item.tall { grid-row: span 2; }
+    .gallery-item.tall img { height: 100%; }
+    .gallery-item.wide { grid-column: span 2; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,.9);
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 36px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,.15);
+      border: none;
+      color: var(--white);
+      font-size: 28px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,.3); }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
 
     /* ===== WHY CHOOSE US ===== */
     .why { background: var(--navy); color: var(--white); }
@@ -617,9 +701,7 @@
       margin-top: 48px;
       flex-wrap: wrap;
     }
-    .cta-contact-item {
-      text-align: center;
-    }
+    .cta-contact-item { text-align: center; }
     .cta-contact-item span {
       display: block;
       font-size: 12px;
@@ -695,7 +777,7 @@
     }
     .social-links a:hover { color: var(--gold-light); }
 
-    /* ===== MOBILE NAV ===== */
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .hamburger { display: block; }
       nav {
@@ -723,6 +805,10 @@
 
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item.tall { grid-row: span 1; }
+      .gallery-item.wide { grid-column: span 1; }
+      .gallery-item img { height: 200px; }
       .why-grid { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
       .area-inner { grid-template-columns: 1fr; }
@@ -735,6 +821,7 @@
       .hero-stats { flex-direction: column; gap: 16px; }
       .footer-inner { grid-template-columns: 1fr; }
       .cta-contact { flex-direction: column; gap: 24px; }
+      .gallery-grid { grid-template-columns: 1fr; }
     }
   </style>
 
@@ -748,6 +835,8 @@
     "url": "https://tobuku.github.io/mingyangconstruction/",
     "telephone": "+1-808-940-2350",
     "email": "myconstruction808@gmail.com",
+    "logo": "https://tobuku.github.io/mingyangconstruction/images/logo.jpg",
+    "image": "https://tobuku.github.io/mingyangconstruction/images/kitchen-remodel-1.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "45-1026 Kamehameha Hwy",
@@ -784,7 +873,7 @@
   <header id="header">
     <div class="nav-inner">
       <a href="#" class="logo">
-        <div class="logo-icon">&#21517;</div>
+        <img src="images/logo.jpg" alt="MY Construction logo" class="logo-img">
         <div class="logo-text"><span>MY</span> Construction</div>
       </a>
       <button class="hamburger" id="menuBtn" aria-label="Toggle menu">
@@ -793,6 +882,7 @@
       <nav id="mainNav">
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#gallery">Projects</a>
         <a href="#reviews">Reviews</a>
         <a href="#area">Service Area</a>
         <a href="#contact" class="nav-cta">Free Estimate</a>
@@ -802,10 +892,13 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="images/kitchen-remodel-1.jpg" alt="Kitchen remodel by MY Construction in Kaneohe, Hawaii" width="1200" height="900">
+    </div>
     <div class="hero-inner">
       <div>
         <div class="hero-badge">Serving Oahu Since 2023</div>
-        <h1>Quality Craftsmanship for Your <span>Dream Home</span></h1>
+        <h1>Quality Craftsmanship for Your <em>Dream Home</em></h1>
         <p class="hero-sub">Ming Yang Construction is a locally owned general contractor in Kaneohe, Hawaii. We treat your home as if it were our own.</p>
         <div class="hero-btns">
           <a href="tel:8089402350" class="btn btn-primary">
@@ -852,12 +945,8 @@
   <section class="about" id="about">
     <div class="about-grid">
       <div class="about-visual">
-        <div class="about-name-block">
-          <div class="about-chinese">&#21517;&#25196;</div>
-          <div class="about-meaning">
-            <h3>Ming Yang</h3>
-            <p>Reputation &amp; Long-Term Excellence</p>
-          </div>
+        <div class="about-logo-wrap">
+          <img src="images/logo.jpg" alt="Ming Yang Construction - 名扬建筑 - MY Construction official logo" width="400" height="400">
         </div>
         <div class="about-values">
           <div class="about-value">
@@ -925,49 +1014,112 @@
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a2332" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+        <img src="images/kitchen-remodel-1.jpg" alt="Modern kitchen remodel with quartz island and grey cabinets by MY Construction" class="service-card-img">
+        <div class="service-card-body">
+          <h3>Kitchen Remodels</h3>
+          <p>Transform your kitchen into a modern, functional space. We handle cabinetry, countertops, flooring, lighting, plumbing, and every finish detail.</p>
         </div>
-        <h3>Kitchen Remodels</h3>
-        <p>Transform your kitchen into a modern, functional space. We handle cabinetry, countertops, flooring, lighting, plumbing, and every finish detail to create the kitchen you've always wanted.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a2332" stroke-width="2"><path d="M9 2v6"/><path d="M15 2v6"/><path d="M12 17v5"/><path d="M5 8h14"/><rect x="4" y="8" width="16" height="9" rx="2"/></svg>
+        <img src="images/bathroom-remodel-1.jpg" alt="Bathroom remodel with hexagonal tile shower and double vanity" class="service-card-img">
+        <div class="service-card-body">
+          <h3>Bathroom Remodels</h3>
+          <p>Full bathroom renovations including tub-to-shower conversions, tile work, mosaic shower floors, vanity installation, and vinyl-wood flooring.</p>
         </div>
-        <h3>Bathroom Remodels</h3>
-        <p>Full bathroom renovations including tub-to-shower conversions, tile work, mosaic shower floors, vanity installation, and vinyl-wood flooring. Complete transformations from start to finish.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a2332" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <img src="images/interior-room-9.jpg" alt="Finished interior room with accent wall and ceiling fan" class="service-card-img">
+        <div class="service-card-body">
+          <h3>Full Interior Renovation</h3>
+          <p>Complete interior overhauls including walls, flooring, electrical, plumbing, paint, trim, and fixtures. We reimagine your space with care.</p>
         </div>
-        <h3>New Home Builds</h3>
-        <p>Build your dream home from the ground up. We manage the full construction process with quality materials, expert craftsmanship, and clear communication every step of the way.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a2332" stroke-width="2"><rect x="1" y="6" width="18" height="15" rx="2"/><path d="M19 6V4a2 2 0 00-2-2H7a2 2 0 00-2 2v2"/><path d="M19 13h4v-2a2 2 0 00-2-2h-2"/></svg>
+        <img src="images/double-vanity-6.jpg" alt="Double vanity bathroom with marble countertop and modern fixtures" class="service-card-img">
+        <div class="service-card-body">
+          <h3>Custom Vanities &amp; Countertops</h3>
+          <p>Beautiful double vanities, marble and quartz countertops, modern fixtures, and custom cabinetry tailored to your space and style.</p>
         </div>
-        <h3>Home Extensions</h3>
-        <p>Need more space? We design and build room additions and home extensions that blend seamlessly with your existing structure, adding both living space and property value.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a2332" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        <img src="images/shower-glass-5.jpg" alt="Walk-in shower with glass door and hexagonal tile floor" class="service-card-img">
+        <div class="service-card-body">
+          <h3>Shower &amp; Tile Work</h3>
+          <p>Expert tile installation, walk-in showers, glass enclosures, mosaic floors, and grab bars. Precision craftsmanship for lasting results.</p>
         </div>
-        <h3>Full Interior Renovation</h3>
-        <p>Complete interior overhauls including walls, flooring, electrical, plumbing, paint, trim, and fixtures. We reimagine your interior space with careful attention to every detail.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a2332" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <img src="images/kitchen-remodel-2.jpg" alt="Compact kitchen remodel with quartz counters and grey cabinets" class="service-card-img">
+        <div class="service-card-body">
+          <h3>General Contracting</h3>
+          <p>Whatever your project needs — new builds, extensions, or renovations — we provide comprehensive contracting from permits to punch lists.</p>
         </div>
-        <h3>General Contracting</h3>
-        <p>Whatever your project needs, we provide comprehensive general contracting services. From permits to punch lists, we manage every phase of your construction project.</p>
       </div>
     </div>
   </section>
+
+  <!-- ===== PROJECT GALLERY ===== -->
+  <section class="gallery" id="gallery">
+    <div class="section-header">
+      <span class="section-label">Our Work</span>
+      <h2>Recent Projects</h2>
+      <p>Browse photos from our kitchen remodels, bathroom renovations, and interior projects across Oahu.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item tall" data-index="0">
+        <img src="images/bathroom-remodel-1.jpg" alt="Complete bathroom remodel — hex tile shower, double vanity, flooring">
+        <span class="gallery-label">Bathroom Remodel</span>
+      </div>
+      <div class="gallery-item" data-index="1">
+        <img src="images/kitchen-remodel-1.jpg" alt="Kitchen remodel — quartz island, grey cabinets, pendant lights">
+        <span class="gallery-label">Kitchen Remodel</span>
+      </div>
+      <div class="gallery-item" data-index="2">
+        <img src="images/single-vanity-7.jpg" alt="Single vanity — grey cabinet, quartz top, black fixtures">
+        <span class="gallery-label">Vanity Installation</span>
+      </div>
+      <div class="gallery-item" data-index="3">
+        <img src="images/shower-tile-3.jpg" alt="Walk-in shower — hex floor tile, rain head, corner shelves">
+        <span class="gallery-label">Shower Tile Work</span>
+      </div>
+      <div class="gallery-item" data-index="4">
+        <img src="images/bathroom-tub-2.jpg" alt="New tub installation with tile surround and black fixtures">
+        <span class="gallery-label">Tub Installation</span>
+      </div>
+      <div class="gallery-item wide" data-index="5">
+        <img src="images/double-vanity-6.jpg" alt="Double vanity — marble counter, black faucets, modern mirrors">
+        <span class="gallery-label">Double Vanity</span>
+      </div>
+      <div class="gallery-item" data-index="6">
+        <img src="images/shower-glass-5.jpg" alt="Glass shower enclosure with hexagonal tile floor and grab bars">
+        <span class="gallery-label">Shower Enclosure</span>
+      </div>
+      <div class="gallery-item" data-index="7">
+        <img src="images/bathroom-white-4.jpg" alt="White bathroom — glass shower, subway tile, vanity">
+        <span class="gallery-label">White Bathroom</span>
+      </div>
+      <div class="gallery-item" data-index="8">
+        <img src="images/shower-grab-bars-8.jpg" alt="Accessible shower with grab bars and marble-look tile">
+        <span class="gallery-label">Accessible Shower</span>
+      </div>
+      <div class="gallery-item" data-index="9">
+        <img src="images/interior-room-9.jpg" alt="Finished room — accent wall, ceiling fan, new carpet">
+        <span class="gallery-label">Interior Renovation</span>
+      </div>
+      <div class="gallery-item" data-index="10">
+        <img src="images/kitchen-remodel-2.jpg" alt="Compact kitchen — quartz counters, grey cabinets, modern fixtures">
+        <span class="gallery-label">Kitchen Renovation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
+    <img src="" alt="" id="lightboxImg">
+    <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
+  </div>
 
   <!-- ===== WHY CHOOSE US ===== -->
   <section class="why">
@@ -1087,7 +1239,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="#" class="logo">
-          <div class="logo-icon">&#21517;</div>
+          <img src="images/logo.jpg" alt="MY Construction logo" class="logo-img">
           <div class="logo-text"><span>MY</span> Construction</div>
         </a>
         <p>Ming Yang Construction LLC — locally owned and operated general contractor in Kaneohe, Hawaii. Quality craftsmanship, honest work, competitive pricing.</p>
@@ -1096,13 +1248,14 @@
         <h4>Services</h4>
         <a href="#services">Kitchen Remodels</a>
         <a href="#services">Bathroom Remodels</a>
-        <a href="#services">New Home Builds</a>
-        <a href="#services">Home Extensions</a>
         <a href="#services">Interior Renovation</a>
+        <a href="#services">Shower &amp; Tile Work</a>
+        <a href="#services">General Contracting</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <a href="#about">About Us</a>
+        <a href="#gallery">Projects</a>
         <a href="#reviews">Reviews</a>
         <a href="#area">Service Area</a>
         <a href="#contact">Contact</a>
@@ -1141,6 +1294,55 @@
         document.getElementById('mainNav').classList.remove('open');
       });
     });
+
+    // Lightbox
+    (function() {
+      var items = document.querySelectorAll('.gallery-item');
+      var lightbox = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lightboxImg');
+      var images = [];
+      var current = 0;
+
+      items.forEach(function(item) {
+        var img = item.querySelector('img');
+        images.push({ src: img.src, alt: img.alt });
+        item.addEventListener('click', function() {
+          current = parseInt(item.getAttribute('data-index'));
+          show(current);
+          lightbox.classList.add('active');
+        });
+      });
+
+      function show(i) {
+        lbImg.src = images[i].src;
+        lbImg.alt = images[i].alt;
+      }
+
+      document.querySelector('.lightbox-close').addEventListener('click', function() {
+        lightbox.classList.remove('active');
+      });
+
+      document.querySelector('.lightbox-prev').addEventListener('click', function() {
+        current = (current - 1 + images.length) % images.length;
+        show(current);
+      });
+
+      document.querySelector('.lightbox-next').addEventListener('click', function() {
+        current = (current + 1) % images.length;
+        show(current);
+      });
+
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) lightbox.classList.remove('active');
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') lightbox.classList.remove('active');
+        if (e.key === 'ArrowLeft') { current = (current - 1 + images.length) % images.length; show(current); }
+        if (e.key === 'ArrowRight') { current = (current + 1) % images.length; show(current); }
+      });
+    })();
   </script>
 </body>
 </html>
