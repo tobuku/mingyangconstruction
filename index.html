@@ -122,14 +122,13 @@
 
     /* ===== HERO (Logo Showcase) ===== */
     .hero {
-      min-height: 70vh;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
-      padding: 100px 24px 60px;
-      background: linear-gradient(160deg, var(--navy) 0%, #0f1923 60%, #1a3045 100%);
+      padding: 88px 0 0;
+      background: var(--white);
     }
     .hero::after {
       content: '';
@@ -137,8 +136,8 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 80px;
-      background: linear-gradient(to top, #0f1923, transparent);
+      height: 100px;
+      background: linear-gradient(to top, var(--navy), transparent);
       z-index: 1;
     }
     .hero-logo-showcase {
@@ -154,7 +153,6 @@
     .hero-logo-showcase img {
       width: 100%;
       height: auto;
-      filter: drop-shadow(0 4px 32px rgba(200,149,60,.2)) drop-shadow(0 16px 64px rgba(0,0,0,.5)) brightness(1.1);
     }
 
     /* ===== INTRO BANNER (Text + Kitchen BG) ===== */
@@ -177,7 +175,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, #0f1923 0%, rgba(15,25,35,.88) 15%, rgba(26,35,50,.85) 50%, rgba(26,48,69,.8) 100%);
+      background: linear-gradient(180deg, rgba(26,35,50,.95) 0%, rgba(15,25,35,.88) 20%, rgba(26,35,50,.85) 50%, rgba(26,48,69,.8) 100%);
     }
     .intro-inner {
       max-width: 900px;
@@ -810,8 +808,7 @@
       nav a { margin-left: 0; font-size: 16px; }
       .nav-cta { text-align: center; }
 
-      .hero { min-height: 50vh; padding: 90px 24px 40px; }
-      .hero-logo-showcase { max-width: 400px; }
+      .hero { padding: 76px 0 0; }
       .intro { padding: 60px 24px 80px; }
       .intro-stats { gap: 24px; }
 
@@ -830,8 +827,7 @@
     @media (max-width: 480px) {
       .about-highlights { grid-template-columns: 1fr; }
       .area-list { grid-template-columns: 1fr; }
-      .hero { min-height: 40vh; }
-      .hero-logo-showcase { max-width: 300px; }
+      .hero { padding: 72px 0 0; }
       .intro-stats { flex-direction: column; gap: 16px; }
       .footer-inner { grid-template-columns: 1fr; }
       .cta-contact { flex-direction: column; gap: 24px; }
@@ -907,7 +903,7 @@
   <!-- ===== HERO (Logo Showcase) ===== -->
   <section class="hero" id="home">
     <div class="hero-logo-showcase">
-      <img src="images/myconstruction.jpg" alt="MY Construction - Ming Yang Construction - 名扬建筑 official logo" width="760" height="322" style="mix-blend-mode: lighten;">
+      <img src="images/myconstruction.jpg" alt="MY Construction - Ming Yang Construction - 名扬建筑 official logo" width="760" height="322">
     </div>
   </section>
 
