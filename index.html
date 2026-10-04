@@ -1436,7 +1436,19 @@
         opacity: 0, y: 40, duration: 0.7, stagger: 0.15, ease: 'power2.out'
       });
 
-      // Service area — items slide in from left, map from right
+      // Service area — header, items slide in from left, map from right
+      gsap.from('.area .section-label', {
+        scrollTrigger: { trigger: '.area', start: 'top 85%' },
+        opacity: 0, y: 20, duration: 0.7
+      });
+      gsap.from('.area h2', {
+        scrollTrigger: { trigger: '.area', start: 'top 85%' },
+        opacity: 0, y: 30, duration: 0.8, delay: 0.1
+      });
+      gsap.from('.area-inner > div > p', {
+        scrollTrigger: { trigger: '.area', start: 'top 80%' },
+        opacity: 0, y: 20, duration: 0.7, delay: 0.2
+      });
       gsap.from('.area-item', {
         scrollTrigger: { trigger: '.area-list', start: 'top 85%' },
         opacity: 0, x: -25, duration: 0.5, stagger: 0.06
@@ -1462,6 +1474,12 @@
       gsap.from('.cta-btns', {
         scrollTrigger: { trigger: '.cta', start: 'top 75%' },
         opacity: 0, y: 20, duration: 0.7, delay: 0.5
+      });
+
+      // CTA contact items
+      gsap.from('.cta-contact-item', {
+        scrollTrigger: { trigger: '.cta-contact', start: 'top 90%' },
+        opacity: 0, y: 20, duration: 0.6, stagger: 0.12
       });
 
       // Footer columns
