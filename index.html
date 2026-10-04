@@ -253,20 +253,16 @@
       justify-content: center;
     }
     .hero-logo-showcase {
-      background: rgba(255,255,255,.08);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 24px;
-      padding: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 100%;
     }
     .hero-logo-showcase img {
-      max-width: 380px;
       width: 100%;
+      max-width: 520px;
       height: auto;
-      filter: drop-shadow(0 8px 32px rgba(0,0,0,.3));
+      filter: drop-shadow(0 4px 24px rgba(200,149,60,.25)) drop-shadow(0 12px 48px rgba(0,0,0,.4)) brightness(1.15);
     }
 
     /* ===== SECTION STYLES ===== */
@@ -800,9 +796,8 @@
       .nav-cta { text-align: center; }
 
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-visual { order: -1; }
-      .hero-logo-showcase { padding: 24px; }
-      .hero-logo-showcase img { max-width: 240px; }
+      .hero-visual { order: -1; margin-bottom: 16px; }
+      .hero-logo-showcase img { max-width: 280px; }
       .hero-stats { gap: 24px; }
       .hero-stat h3 { font-size: 24px; }
 
@@ -927,7 +922,7 @@
       </div>
       <div class="hero-visual">
         <div class="hero-logo-showcase">
-          <img src="images/myconstruction.jpg" alt="MY Construction - Ming Yang Construction official logo" width="760" height="322">
+          <img src="images/myconstruction.jpg" alt="MY Construction - Ming Yang Construction official logo" width="760" height="322" style="mix-blend-mode: lighten;">
         </div>
       </div>
     </div>
