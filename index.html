@@ -249,35 +249,24 @@
 
     .hero-visual {
       display: flex;
-      flex-direction: column;
-      gap: 16px;
+      align-items: center;
+      justify-content: center;
     }
-    .hero-card {
-      background: rgba(255,255,255,.06);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 16px;
-      padding: 32px;
-    }
-    .hero-card h3 {
-      color: var(--white);
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-    .hero-card p {
-      color: rgba(255,255,255,.6);
-      font-size: 14px;
-    }
-    .hero-card-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(200,149,60,.15);
-      border-radius: 12px;
+    .hero-logo-showcase {
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 24px;
+      padding: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 16px;
-      font-size: 22px;
+    }
+    .hero-logo-showcase img {
+      max-width: 380px;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 8px 32px rgba(0,0,0,.3));
     }
 
     /* ===== SECTION STYLES ===== */
@@ -674,6 +663,18 @@
       text-align: center;
       padding: 100px 24px;
     }
+    .cta-brand {
+      max-width: 200px;
+      margin: 0 auto 40px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,.3);
+    }
+    .cta-brand img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
     .cta h2 {
       font-size: clamp(28px, 4vw, 42px);
       font-weight: 800;
@@ -799,7 +800,9 @@
       .nav-cta { text-align: center; }
 
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-visual { display: none; }
+      .hero-visual { order: -1; }
+      .hero-logo-showcase { padding: 24px; }
+      .hero-logo-showcase img { max-width: 240px; }
       .hero-stats { gap: 24px; }
       .hero-stat h3 { font-size: 24px; }
 
@@ -923,19 +926,8 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-card">
-          <div class="hero-card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8953c" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <h3>Full-Service General Contractor</h3>
-          <p>From kitchen and bathroom remodels to new home builds and extensions — we handle every detail from start to finish.</p>
-        </div>
-        <div class="hero-card">
-          <div class="hero-card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8953c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>Honesty &amp; Integrity</h3>
-          <p>We are competitively priced with close attention to the details of each and every project we take on.</p>
+        <div class="hero-logo-showcase">
+          <img src="images/myconstruction.jpg" alt="MY Construction - Ming Yang Construction official logo" width="760" height="322">
         </div>
       </div>
     </div>
@@ -1209,6 +1201,9 @@
 
   <!-- ===== CTA ===== -->
   <section class="cta" id="contact">
+    <div class="cta-brand">
+      <img src="images/mycontruction-header.jpg" alt="MY Construction brand logo" width="1024" height="576">
+    </div>
     <h2>Ready to Start Your Project?</h2>
     <p>Get a free estimate today. We'd love to hear about your vision and make it a reality.</p>
     <div class="cta-btns">
@@ -1341,6 +1336,110 @@
         if (e.key === 'Escape') lightbox.classList.remove('active');
         if (e.key === 'ArrowLeft') { current = (current - 1 + images.length) % images.length; show(current); }
         if (e.key === 'ArrowRight') { current = (current + 1) % images.length; show(current); }
+      });
+    })();
+  </script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    (function() {
+      // Respect reduced motion preference
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero elements — fade in on load
+      gsap.from('.hero-badge', { opacity: 0, y: 20, duration: 0.8, delay: 0.2 });
+      gsap.from('.hero h1', { opacity: 0, y: 30, duration: 0.9, delay: 0.4 });
+      gsap.from('.hero-sub', { opacity: 0, y: 20, duration: 0.8, delay: 0.6 });
+      gsap.from('.hero-btns', { opacity: 0, y: 20, duration: 0.8, delay: 0.8 });
+      gsap.from('.hero-stats', { opacity: 0, y: 20, duration: 0.8, delay: 1.0 });
+      gsap.from('.hero-logo-showcase', { opacity: 0, scale: 0.9, duration: 1.0, delay: 0.6, ease: 'back.out(1.4)' });
+
+      // Section headers — fade up on scroll
+      gsap.utils.toArray('.section-header, .about-text .section-label, .about-text h2').forEach(function(el) {
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
+          opacity: 0, y: 30, duration: 0.8
+        });
+      });
+
+      // About section
+      gsap.from('.about-logo-wrap', {
+        scrollTrigger: { trigger: '.about-logo-wrap', start: 'top 85%' },
+        opacity: 0, x: -40, duration: 0.9
+      });
+      gsap.from('.about-value', {
+        scrollTrigger: { trigger: '.about-values', start: 'top 85%' },
+        opacity: 0, x: -30, duration: 0.6, stagger: 0.15
+      });
+      gsap.from('.about-text > p', {
+        scrollTrigger: { trigger: '.about-text', start: 'top 80%' },
+        opacity: 0, y: 20, duration: 0.7, stagger: 0.15
+      });
+      gsap.from('.about-highlight', {
+        scrollTrigger: { trigger: '.about-highlights', start: 'top 85%' },
+        opacity: 0, y: 15, duration: 0.5, stagger: 0.1
+      });
+
+      // Service cards — staggered fade up
+      gsap.from('.service-card', {
+        scrollTrigger: { trigger: '.services-grid', start: 'top 80%' },
+        opacity: 0, y: 40, duration: 0.7, stagger: 0.12
+      });
+
+      // Gallery items — staggered reveal
+      gsap.from('.gallery-item', {
+        scrollTrigger: { trigger: '.gallery-grid', start: 'top 80%' },
+        opacity: 0, scale: 0.95, duration: 0.5, stagger: 0.08
+      });
+
+      // Why cards
+      gsap.from('.why-card', {
+        scrollTrigger: { trigger: '.why-grid', start: 'top 80%' },
+        opacity: 0, y: 30, duration: 0.7, stagger: 0.15
+      });
+
+      // Review cards
+      gsap.from('.review-card', {
+        scrollTrigger: { trigger: '.reviews-grid', start: 'top 80%' },
+        opacity: 0, y: 30, duration: 0.7, stagger: 0.15
+      });
+
+      // Service area
+      gsap.from('.area-item', {
+        scrollTrigger: { trigger: '.area-list', start: 'top 85%' },
+        opacity: 0, x: -20, duration: 0.5, stagger: 0.06
+      });
+      gsap.from('.area-map', {
+        scrollTrigger: { trigger: '.area-map', start: 'top 85%' },
+        opacity: 0, x: 40, duration: 0.9
+      });
+
+      // CTA section
+      gsap.from('.cta-brand', {
+        scrollTrigger: { trigger: '.cta', start: 'top 80%' },
+        opacity: 0, scale: 0.85, duration: 0.9, ease: 'back.out(1.3)'
+      });
+      gsap.from('.cta h2', {
+        scrollTrigger: { trigger: '.cta', start: 'top 75%' },
+        opacity: 0, y: 25, duration: 0.8, delay: 0.2
+      });
+      gsap.from('.cta p', {
+        scrollTrigger: { trigger: '.cta', start: 'top 75%' },
+        opacity: 0, y: 20, duration: 0.7, delay: 0.35
+      });
+      gsap.from('.cta-btns', {
+        scrollTrigger: { trigger: '.cta', start: 'top 75%' },
+        opacity: 0, y: 20, duration: 0.7, delay: 0.5
+      });
+
+      // Footer columns
+      gsap.from('.footer-inner > div', {
+        scrollTrigger: { trigger: '.footer-inner', start: 'top 90%' },
+        opacity: 0, y: 20, duration: 0.6, stagger: 0.1
       });
     })();
   </script>
